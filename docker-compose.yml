@@ -5,6 +5,8 @@ services:
     image: 'java-server:latest'
     ports:
       - '8080:8080'
+    build:
+      context: .
     depends_on:
       - database
 
