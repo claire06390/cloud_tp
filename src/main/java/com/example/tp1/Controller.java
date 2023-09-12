@@ -12,23 +12,10 @@ import java.util.List;
 public class Controller {
     //test
 
-    @Autowired
-    private UserRepository userRepository;
     @GetMapping("/world")
     public String helloWorld() {
         return "Hello World!";
     }
 
-    @PostMapping("/user")
-    public String createUser(@RequestBody UserDTO userDTO) {
-        User user = new User(userDTO.getUsername(), userDTO.getEmail(),userDTO.getFirstName(),userDTO.getLastName());
-        User userSave = userRepository.save(user);
-        return userSave.toString();
-    }
 
-    // Get all users
-    @GetMapping
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
-    }
 }
