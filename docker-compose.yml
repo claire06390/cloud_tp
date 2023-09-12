@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  app:
+    image: 'java-server:latest'
+    ports:
+      - '8080:8080'
+    build:
+      context: .
+
+  database:
+    image: postgres:14
+    ports:
+      - '15432:5432'
+    environment:
+      - POSTGRES_PASSWORD=dev_password
+      - POSTGRES_USER=si5_sacc
+      - POSTGRES_DB=td_1
